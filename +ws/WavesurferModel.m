@@ -193,6 +193,7 @@ classdef WavesurferModel < ws.Model & ws.EventBroadcaster
         SweepDurationIfFinite
         NSweepsCompletedInThisRun    % Current number of completed sweeps while the run is running (range of 0 to NSweepsPerRun).
         IsYokedToScanImage
+        IsYokedToStimulator
         NTimesDataAvailableCalledSinceRunStart
         ClockAtRunStart  
           % We want this written to the data file header, but not persisted in
@@ -387,6 +388,7 @@ classdef WavesurferModel < ws.Model & ws.EventBroadcaster
         UpdateUserCodeManager
         UpdateForNewData
         UpdateIsYokedToScanImage
+        UpdateIsYokedToStimulator
         %WillSetState
         DidSetState
         DidCompleteSweep

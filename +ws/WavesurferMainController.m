@@ -28,6 +28,7 @@ classdef WavesurferMainController < ws.Controller
         TestPulseMenuItem
         %DisplayMenuItem
         YokeToScanimageMenuItem
+        YokeToStimulatorMenuItem
         
         ProfileMenu
         ProfileMenuItems
@@ -183,6 +184,7 @@ classdef WavesurferMainController < ws.Controller
                 %model.subscribeMe(self, 'WillSetState', '', 'willSetModelState');
                 model.subscribeMe(self, 'DidSetState', '', 'update');
                 model.subscribeMe(self, 'UpdateIsYokedToScanImage', '', 'updateControlProperties');
+                %model.subscribeMe(self, 'UpdateIsYokedToStimulator', '', 'updateControlProperties');
                 model.subscribeMe(self, 'DidCompleteSweep', '', 'updateControlProperties');
                 model.subscribeMe(self, 'UpdateForNewData', '', 'updateForNewData');
                 model.subscribeMe(self, 'RequestLayoutForAllWindows', '', 'layoutForAllWindowsRequested');                
@@ -351,7 +353,11 @@ classdef WavesurferMainController < ws.Controller
                        'Separator','on', ...
                        'Enable', 'off', ...
                        'Label','Yoked to ScanImage');
-
+            self.YokeToStimulatorMenuItem = ...
+                uimenu('Parent',self.ProtocolMenu, ...
+                       'Separator','on', ...
+                       'Enable', 'on', ...
+                       'Label','Yoked to Stimulator');
             % View menu
             self.ViewMenu_ = ...
                 uimenu('Parent',self.FigureGH_, ...
