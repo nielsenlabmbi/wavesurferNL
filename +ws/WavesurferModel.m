@@ -1217,6 +1217,13 @@ classdef WavesurferModel < ws.Model & ws.EventBroadcaster
     end  % protected methods block
     
     methods
+        function openStimulatorUDP(self)
+            disp('test')
+            %DcomState.serialPortHandle = udp(rip,'RemotePort',8000,'LocalPort',9000);
+        end
+    end
+
+    methods
         function setIsYokedToScanImageForTesting_(self, newValue)
             self.setIsYokedToScanImage_(newValue) ;
         end        

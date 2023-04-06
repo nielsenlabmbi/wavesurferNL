@@ -1589,6 +1589,14 @@ classdef WavesurferMainController < ws.Controller
 %             end                        
         end  % function
 
+        function YokeToStimulatorMenuItemActuated(self,source,event) %#ok<INUSD>
+             disp('yoke')
+             %open udp port
+             self.Model_do('openStimulatorUDP');
+             
+
+        end  % function
+
         % Profile menu
         function ProfileMenuItemActuated(self, source, event, profileName)  %#ok<INUSL>
             self.Model_.do('set', 'CurrentProfileName', profileName) ;
